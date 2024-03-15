@@ -11,3 +11,20 @@ con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 
+
+const squareWrapper=document.createElement('div')
+squareWrapper.className ='d-flex flex-wrap w-100';
+
+
+let numBox =100;
+let tmpHTML = '';
+
+for (i=0 ; i<numBox; i++){
+    let number = i;
+    tmpHTML+=`<div class="box">${number}</div>`
+}
+
+squareWrapper.innerHTML=tmpHTML;
+
+const stContainer=document.querySelector('.st-container');
+stContainer.append(squareWrapper);
