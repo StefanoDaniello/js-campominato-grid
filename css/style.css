@@ -10,11 +10,24 @@
     margin: 0 auto;
 }
 
+body{
+    background-color: green;
+}
+
+
 .box{
     border: 1px solid black;
     width: calc(100% / 10);
     height: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+}
+
+
+.bgeven{
+    background-color: aqua;
+}
+.bgodd{
+    background-color: yellow;
 }
