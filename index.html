@@ -14,11 +14,24 @@
 <body>
     <header class="d-flex justify-content-between bg-light p-3">
         <h1>Campo Minato</h1>
-        <input type="button" class="btn btn-success " value="Start" >
-    </header>
+        <div class="d-flex">
+            
+            
+            <select class="form-select mx-4" id="mySelect" onchange="myFunction()">
+              <option selected>Choose...</option>
+              <option value="1" id="one">Easy</option>
+              <option value="2" id="two">Medium</option>
+              <option value="3" id="three">Hard</option>
+            </select>
+            <input type="button" class="btn btn-success mx-2 px-4" value="Start" >
 
-        <div class="st-container p-5 d-flex flex-wrap ">
+
         </div>
+        
+    </header>
+        <div class="p-5 d-flex flex-wrap " id="st-container">
+        </div>
+        
       <!-- javascript  -->
       <script src="js/script.js" type="text/javascript"></script>
       <script src="js/utility.js" type="text/javascript"></script>

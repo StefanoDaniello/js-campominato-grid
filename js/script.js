@@ -11,7 +11,6 @@ con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 
-const button =document.querySelector('.btn')
 
 function newSquaregrid(content){
     const square =document.createElement('div')
@@ -19,7 +18,7 @@ function newSquaregrid(content){
     square.classList.add('box')
     return square
 }
-function evenOrodd(number){
+function isEven(number){
     if(number % 2 === 0){
         return true
     }else{
@@ -27,29 +26,46 @@ function evenOrodd(number){
     }
 }
 
-button.addEventListener('click', function(){
+const button =document.querySelector('.btn')
 
-    const stContainer =document.querySelector('.st-container')
 
-    for (let i=0 ; i<100; i++){
-        const newSquare = newSquaregrid(i + 1)
-        newSquare.addEventListener('click', function(){
-            if(evenOrodd(i + 1)){
-                newSquare.classList.add('bgeven')
-            }else{
-                newSquare.classList.add('bgodd')
-            }
+ let games = myFunction();
+console.log(games)
 
-        })
-        stContainer.appendChild(newSquare);
-    }
-})
+if(games == 1){
+    button.addEventListener('click', function(){
     
+        const stContainer =document.getElementById('st-container')
+    
+        for (let i=0 ; i<100; i++){
+            const newSquare = newSquaregrid(i + 1)
+            newSquare.addEventListener('click', function(){
+                if(isEven(i + 1)){
+                    newSquare.classList.add('bgeven')
+                    let even = 'pari';
+                    console.log(i + 1 , even)
+                }else{
+                    newSquare.classList.add('bgodd')
+                    let even = 'dispari';
+                    console.log(i + 1 , even)
+                }
+    
+            })
+            stContainer.appendChild(newSquare);
+        }
+    })   
+}
 
 
 
 
 
+function myFunction(){
+    let select = document.getElementById("mySelect").value;    
+    //  console.log(select)
+    // document.getElementById("st-container").innerHTML = "You selected: " + select;
+    return select 
+}
 
 
 
