@@ -15,7 +15,8 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 function newSquaregrid(content){
     const square =document.createElement('div')
     square.innerHTML ='<span>' + content + '</span>'
-    square.classList.add('box')
+    // square.classList.add('box')
+    square.classList.toggle('box');
     return square
 }
 function isEven(number){
@@ -29,13 +30,12 @@ function isEven(number){
 const button =document.querySelector('.btn')
 
 
- let games = myFunction();
-console.log(games)
+//  let games =  myFunction();
+// console.log(games)
 
-if(games == 1){
     button.addEventListener('click', function(){
     
-        const stContainer =document.getElementById('st-container')
+        const stContainer =document.querySelector('.st-container')
     
         for (let i=0 ; i<100; i++){
             const newSquare = newSquaregrid(i + 1)
@@ -51,48 +51,30 @@ if(games == 1){
                 }
     
             })
+            
             stContainer.appendChild(newSquare);
+            
         }
     })   
-}
+
+
+    // function myFunction() {
+    //     var element = document.getElementById("myDIV");
+    //     element.classList.toggle("mystyle");
+    //  }
+
+     
+
+//  function myFunction(){
+//     let select= document.getElementById("mySelect").value;    
+//     console.log(select)
+//     // document.querySelector(".st-container").innerHTML = "You selected: " + selected;
+//     return select.value
+//  }
 
 
 
 
-
-function myFunction(){
-    let select = document.getElementById("mySelect").value;    
-    //  console.log(select)
-    // document.getElementById("st-container").innerHTML = "You selected: " + select;
-    return select 
-}
-
-
-
-
-
-
-
-
-
-// function myfunction(){
-//     const squareWrapper=document.createElement('div')
-//     squareWrapper.className ='d-flex flex-wrap w-100';
-    
-    
-//     let numBox =100;
-//     let tmpHTML = '';
-    
-//     for (i=0 ; i<numBox; i++){
-//         let number = i;
-//         tmpHTML+=`<div class="box">${number}</div>`
-//         console.log(i)
-//     }
-//     squareWrapper.innerHTML=tmpHTML;
-//     const stContainer=document.querySelector('.st-container');
-//     // stContainer.classList.toggle('box')
-//     stContainer.append(squareWrapper);
-// }
 
 
     

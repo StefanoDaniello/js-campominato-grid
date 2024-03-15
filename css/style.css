@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-#st-container{
+.st-container{
     margin: 0 auto;
     width: 650px;
     height: 650px;
@@ -34,3 +34,6 @@ body{
     background-color: yellow;
 }
 
+.none{
+    display: none;
+}
