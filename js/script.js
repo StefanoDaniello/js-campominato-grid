@@ -12,76 +12,40 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 */
 
 
-function newSquaregrid(content){
-    const square =document.createElement('div')
-    square.innerHTML ='<span>' + content + '</span>'
-    // square.classList.add('box')
-    square.classList.toggle('box');
-    return square
-}
-function isEven(number){
-    if(number % 2 === 0){
-        return true
-    }else{
-        return false
-    }
-}
-
-const button =document.querySelector('.btn')
 
 
-//  let games =  myFunction();
-// console.log(games)
+const button =document.querySelector('.btn').addEventListener('click' , function (){
+    const numberOfCell = document.getElementById('mySelect').value
+    newGame(numberOfCell);
+})
 
-    button.addEventListener('click', function(){
-    
-        const stContainer =document.querySelector('.st-container')
-    
-        for (let i=0 ; i<100; i++){
-            const newSquare = newSquaregrid(i + 1)
-            newSquare.addEventListener('click', function(){
-                if(isEven(i + 1)){
-                    newSquare.classList.add('bgeven')
-                    let even = 'pari';
-                    console.log(i + 1 , even)
-                }else{
-                    newSquare.classList.add('bgodd')
-                    let even = 'dispari';
-                    console.log(i + 1 , even)
-                }
-    
-            })
-            
-            stContainer.appendChild(newSquare);
-            
+
+function newGame(numberOfSquares){
+    const stContainer =document.querySelector('.st-container');
+    stContainer.innerHTML='';
+
+    for(let i=0 ; i<numberOfSquares; i++){
+
+    const square =document.createElement('div') ;
+
+        if (numberOfSquares === 81){
+            square.classList.add('box','medium')
+        }else if(numberOfSquares === 49){
+            square.classList.add('box','hard')
+        }else{
+            square.classList.add('box')
         }
-    })   
 
+    square.addEventListener('click' , function (){
+        square.classList.add('bgwin')
+    })
 
-    // function myFunction() {
-    //     var element = document.getElementById("myDIV");
-    //     element.classList.toggle("mystyle");
-    //  }
+   const spanContent = document.createElement('span');
+   spanContent.append(i + 1);
+   
 
-     
-
-//  function myFunction(){
-//     let select= document.getElementById("mySelect").value;    
-//     console.log(select)
-//     // document.querySelector(".st-container").innerHTML = "You selected: " + selected;
-//     return select.value
-//  }
-
-
-
-
-
-
-    
-
-
-
-
-  
-
-
+   square.appendChild(spanContent);
+   stContainer.appendChild(square);
+   
+}
+}

@@ -17,6 +17,7 @@ body{
 
 
 .box{
+    float: left;
     border: 1px solid black;
     width: calc(100% / 10);
     height: calc(100% / 10);
@@ -27,13 +28,16 @@ body{
 }
 
 
-.bgeven{
+.bgwin{
     background-color: aqua;
 }
-.bgodd{
-    background-color: yellow;
+
+.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
 }
 
-.none{
-    display: none;
+.hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
