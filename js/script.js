@@ -16,6 +16,7 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 const button =document.querySelector('.btn').addEventListener('click' , function (){
     const numberOfCell = document.getElementById('mySelect').value
+    console.log(numberOfCell)
     newGame(numberOfCell);
 })
 
@@ -28,13 +29,13 @@ function newGame(numberOfSquares){
 
     const square =document.createElement('div') ;
 
-        if (numberOfSquares === 81){
-            square.classList.add('box','medium')
-        }else if(numberOfSquares === 49){
-            square.classList.add('box','hard')
-        }else{
-            square.classList.add('box')
-        }
+    if (numberOfSquares == 81){
+        square.classList.add('box','medium')
+    }else if(numberOfSquares == 49){
+        square.classList.add('box','hard')
+    }else{
+        square.classList.add('box')
+    }
 
     square.addEventListener('click' , function (){
         square.classList.add('bgwin')
